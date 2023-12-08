@@ -91,4 +91,4 @@ const partTwo = (file) => {
   return values.reduce((s, v) => s + v);
 };
 
-console.log(partTwo("./data.txt"));
+console.log(partTwo("./input.txt"));
