@@ -12,12 +12,8 @@ const mapXtoY = (mapping, X) => {
   return Y === -1 ? X : Y;
 };
 
-const partOne = (file) => {
-  const lines = fs.readFileSync(file, "utf-8").split("\r\n");
-
-  const input = lines;
-
-  console.log(input);
+fs.readFile("input.txt", "utf-8", (err, data) => {
+  const input = data.split("\n\n");
 
   const inputSeeds = input[0]
     .split("seeds: ")
@@ -43,6 +39,4 @@ const partOne = (file) => {
     .map((n) => mapXtoY(humToLoc, n));
 
   console.log(Math.min(...res));
-};
-
-partOne("./input.txt");
+});
